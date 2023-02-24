@@ -6,8 +6,8 @@ const ScannerComponent = ({ scanner }: { scanner: ScannerDetails }) => {
         <Tr>
             <Td>{scanner.scannerName}</Td>
             <Td>{scanner.ipAddress}</Td>
-            <Td>{scanner.scannerSpeed}</Td>
-            <Td>{scanner.isAvailable}</Td>
+            <Td>{scanner.scannerSpeed} m/s</Td>
+            <Td>{scanner.isAvailable ? "Available" : "Engaged"}</Td>
         </Tr>)
 }
 
