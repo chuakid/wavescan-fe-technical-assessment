@@ -55,7 +55,6 @@ const FormComponent = ({ setVerified }: { setVerified: React.Dispatch<React.SetS
               value={formik.values.projectName}
             />
             <FormErrorMessage >{formik.errors.projectName}</FormErrorMessage>
-
           </FormControl>
 
           <FormControl>
@@ -69,6 +68,7 @@ const FormComponent = ({ setVerified }: { setVerified: React.Dispatch<React.SetS
               {SCANNING_MODES.map(mode => <option key={mode} value={mode}>{mode}</option>)}
             </Select>
           </FormControl>
+
           <FormControl isInvalid={!!formik.errors.scanDimensionsX || !!formik.errors.scanDimensionsY}>
             <FormLabel as="h5">Scan Dimensions (cm)</FormLabel>
             <HStack>
@@ -81,8 +81,8 @@ const FormComponent = ({ setVerified }: { setVerified: React.Dispatch<React.SetS
             </HStack>
             <FormErrorMessage>{formik.errors.scanDimensionsX}</FormErrorMessage>
             <FormErrorMessage>{formik.errors.scanDimensionsY}</FormErrorMessage>
-
           </FormControl>
+
           <FormControl isInvalid={!!formik.errors.scannerFrequency}>
             <FormLabel htmlFor='scannerFrequency'>Scanner Frequency (GHz)</FormLabel>
             <NumberInput defaultValue={formik.values.scannerFrequency} onChange={formik.handleChange}
@@ -91,6 +91,7 @@ const FormComponent = ({ setVerified }: { setVerified: React.Dispatch<React.SetS
             </NumberInput>
             <FormErrorMessage>{formik.errors.scannerFrequency}</FormErrorMessage>
           </FormControl>
+          
           <Button type="submit" colorScheme="blue" width="full">
             Submit
           </Button>
