@@ -11,8 +11,9 @@ const ScannersComponent = () => {
             (res) => {
                 res.json()
                     .then(scanners => setScanners(scanners))
+                    .catch(() => console.log("Malformed scanners"))
             }
-        )
+        ).catch((reason) => console.log("Failed to get scanners:" + reason))
     }, [])
 
     return (
