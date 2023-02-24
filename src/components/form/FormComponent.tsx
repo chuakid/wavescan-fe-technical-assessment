@@ -70,7 +70,7 @@ const FormComponent = ({ setVerified }: { setVerified: React.Dispatch<React.SetS
             </Select>
           </FormControl>
           <FormControl isInvalid={!!formik.errors.scanDimensionsX || !!formik.errors.scanDimensionsY}>
-            <FormLabel as="h5">Scan Dimensions</FormLabel>
+            <FormLabel as="h5">Scan Dimensions (cm)</FormLabel>
             <HStack>
               <FormLabel htmlFor='scanDimensionsX'>X</FormLabel>
               <Input value={formik.values.scanDimensionsX} onChange={formik.handleChange}
@@ -84,8 +84,8 @@ const FormComponent = ({ setVerified }: { setVerified: React.Dispatch<React.SetS
 
           </FormControl>
           <FormControl isInvalid={!!formik.errors.scannerFrequency}>
-            <FormLabel htmlFor='scannerFrequency'>Scanner Frequency</FormLabel>
-            <NumberInput value={formik.values.scannerFrequency} onChange={formik.handleChange}
+            <FormLabel htmlFor='scannerFrequency'>Scanner Frequency (GHz)</FormLabel>
+            <NumberInput defaultValue={formik.values.scannerFrequency} onChange={formik.handleChange}
               id="scannerFrequency" min={1} precision={1}>
               <NumberInputField />
             </NumberInput>
