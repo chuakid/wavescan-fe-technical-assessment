@@ -1,11 +1,8 @@
 import { Box, Button, FormControl, FormErrorMessage, FormLabel, Heading, HStack, Input, NumberInput, NumberInputField, Select, VStack } from '@chakra-ui/react';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
-import { submitForm } from '../api';
-import { SCANNING_MODES } from '../constants';
-
-
-
+import { submitForm } from '../../api';
+import { SCANNING_MODES } from '../../constants';
 
 const FormComponent = () => {
   const FormSchema = Yup.object().shape({
@@ -36,7 +33,7 @@ const FormComponent = () => {
       "scannerFrequency": 1.5
     },
     onSubmit: (values) => {
-      submitForm(values).then(res => console.log(res.text()))
+      submitForm(values).then(res => console.log(res.status))
     },
     validationSchema: FormSchema
   })
