@@ -11,7 +11,7 @@ const ScannersComponent = () => {
         successPage().then(
             (res) => {
                 res.json()
-                    .then(scanners => {                        
+                    .then(scanners => {
                         setScanners(scanners)
                         setLoading(false)
                     })

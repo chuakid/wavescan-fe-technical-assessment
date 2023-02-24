@@ -1,4 +1,4 @@
-import { Tr, Td } from '@chakra-ui/react'
+import { Tr, Td, Button } from '@chakra-ui/react'
 import ScannerDetails from './ScannerDetails'
 
 const ScannerComponent = ({ scanner }: { scanner: ScannerDetails }) => {
@@ -8,6 +8,7 @@ const ScannerComponent = ({ scanner }: { scanner: ScannerDetails }) => {
             <Td>{scanner.ipAddress}</Td>
             <Td>{scanner.scannerSpeed} m/s</Td>
             <Td>{scanner.isAvailable ? "Available" : "Engaged"}</Td>
+            <Td><Button isDisabled={!scanner.isAvailable} colorScheme="blue">Connect</Button></Td>
         </Tr>)
 }
 
