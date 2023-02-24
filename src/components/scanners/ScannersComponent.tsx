@@ -10,8 +10,12 @@ const ScannersComponent = () => {
     useEffect(() => {
         successPage().then(
             (res) => {
+                if (!res.ok) {
+                    console.log("Unable to get data");
+                    return
+                }
                 res.json()
-                    .then(scanners => {
+                    .then((scanners: ScannerDetails[]) => {
                         setScanners(scanners)
                         setLoading(false)
                     })
