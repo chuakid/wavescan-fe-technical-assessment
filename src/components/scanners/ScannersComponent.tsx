@@ -22,8 +22,8 @@ const ScannersComponent = () => {
 
     return (
         <Box boxShadow="md" p="6" border="1px" borderColor="gray.200" borderRadius={10}>
-            {loading ?
-                <Spinner />
+            {loading
+                ? <Spinner />
                 : <TableContainer>
                     <Table>
                         <TableCaption>Scanners</TableCaption>
