@@ -10,3 +10,7 @@ export const submitForm = (formData: ScannerParameters) => {
             body: JSON.stringify(formData)
         })
 }
+
+export const successPage = () => {
+    return fetch(import.meta.env.VITE_BASE_URL + "success")
+}
